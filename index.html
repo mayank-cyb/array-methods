@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map method</title>
+</head>
+<body>
+    <img src="https://en.m.wikipedia.org/wiki/File:India_geo_stub.svg" alt="">
+    <img src="./brazil.jpg" alt="">
+    <img src="./hawaii.jpg" alt="">
+
+    <script>
+        //Map demo
+        let characters = ["oggy", "jack", "bob"];
+
+        function capitalizeItUp(character){
+            let firstLetter = character.charAt(0).toUpperCase();
+            let remainingLetters = character.slice(1);
+            return firstLetter + remainingLetters;
+            console.log(character.charAt(0).toUpperCase());
+        }
+
+        let updatedCharacterNames = characters.map(capitalizeItUp);
+            console.log(updatedCharacterNames);
+
+        //Filter demo
+        let numbers = [1, 2, 3, 4, 5, 6];
+
+        function filterEven(number) {
+            return (number % 2 == 0);
+            //return (number > 2 ); /Returning the number > 2 using return statement
+        }
+
+        let evenNumbers = numbers.filter(filterEven);
+        console.log(evenNumbers);
+        
+        // Array from a NodeList
+        // Create an array based on a property of DOM Elements
+        const images = document.querySelectorAll('img');
+        console.log(images);
+        const sources = Array.from(images, (image) => image.src);
+        console.log(sources);
+        const insecureSources = sources.filter((link) => link.startsWith('https://'));
+
+        console.log(insecureSources);
+
+    </script>
+</body>
+</html>
